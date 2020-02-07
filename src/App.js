@@ -12,7 +12,7 @@ function App() {
     <Header />
     <Navbar />
     <Profile />
-    <COMMIT_TEST/>
+
   </div>
   );
 }

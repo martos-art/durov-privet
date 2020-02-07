@@ -1,8 +1,9 @@
 import React from 'react';
+import prof from './Profile.module.css';
 
 const Profile = () => {
   return (
-    <div className='content'>
+    <div className={prof.content}>
       <div>
         <img src='https://media.proglib.io/wp-uploads/2017/05/reactjs-1024x512.png' />
       </div>
@@ -14,11 +15,17 @@ const Profile = () => {
           <div>
           New post
           </div>
-        <div>post 1</div>
-        <div>post 2</div>
-        <div>pos  3</div>
-        <div>post 4</div>
-        <div>post 5</div>
+        <div className={prof.posts}>
+
+          <div className={prof.item}>
+            post 1
+          </div>
+
+          <div className={prof.item}>
+            post 2
+          </div>
+
+        </div>
       </div>
 
     </div>
