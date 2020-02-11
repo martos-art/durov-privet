@@ -1,6 +1,7 @@
 import React from 'react';
 import prof from './MyPosts.module.css';
 import Post from './Post/Post'
+
 const MyPosts = () => {
   return (
       <div>
@@ -9,8 +10,8 @@ const MyPosts = () => {
           New post
           </div>
         <div className={prof.posts}>
-        <Post/>
-        <Post/>
+        <Post message="where is my mind?" likesCount="11"/>
+        <Post message="wheeeeere is my mind?" likesCount="22"/>
 
         </div>
       </div>

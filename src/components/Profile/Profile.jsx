@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className={prof.content}>
       <div>
-        <img src='https://media.proglib.io/wp-uploads/2017/05/reactjs-1024x512.png' />
+        <img src='https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2018/05/Gradient-Roundup-Illustrator-02.jpg' />
       </div>
       <div>
         ava + description
