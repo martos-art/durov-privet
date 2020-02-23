@@ -1,4 +1,30 @@
-.content {
-    grid-area: c;
-    background-color: seagreen;
-    } 
+.dialogs {
+    display: grid;
+    grid-template-columns: 5fr 30fr;
+}
+
+.dialogsItems {
+    padding: 10px;
+}
+.dialogsItems .active{
+    color: cyan;
+}
+
+/* 
+.dialog {
+
+}
+ */
+
+
+
+
+.messages {
+    padding: 10px;
+
+};
+    /*
+.message {
+    
+} 
+*/
