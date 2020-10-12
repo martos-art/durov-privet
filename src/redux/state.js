@@ -4,7 +4,7 @@ let state = {
         posts: [
             { id: 1, message: 'where is my mind?', likesCount: 764 },
             { id: 2, message: 'wheeeeere is my mind?', likesCount: 1921 },
-            { id: 3, message: 'wheeeeeeeeeeeeeeeeere is my mind?', likesCount: 1337 },
+            { id: 3, message: 'where is my mind?', likesCount: 1337 },
             { id: 4, message: 'wheeeeere is myyyyyyyyyyyyy miiiiiiiiiiiiind?', likesCount: 10000000 }
         ]
     },
@@ -26,5 +26,15 @@ let state = {
         ]
     }
 }
+export let addPost = (text) => {
+    debugger;
+    let newMessage = {
+        id: 5,
+        message: text,
+        likesCount: 0
+    };
+    state.profilePage.posts.push(newMessage)
 
-export default state;
+};
+
+export default state; 
