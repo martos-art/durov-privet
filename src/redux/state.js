@@ -51,38 +51,38 @@ let store = {
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogReducer(this._state.dialogsPage, action);
         this._callSubscriber(this._state);
-        // if (action.type === ADD_POST) {
-        //     let newMessage = {
-        //         id: 5,
-        //         message: this._state.profilePage.newPostText,
-        //         likesCount: 0
-        //     };
-        //     this._state.profilePage.posts.unshift(newMessage);
-        //     this._state.profilePage.newPostText = "";
-        //     this._callSubscriber(this._state);
-        //
-        // } else if (action.type === UPDATE_NEW_POST_TEXT) {
-        //     this._state.profilePage.newPostText = action.newText;
-        //     this._callSubscriber(this._state);
-        //
-        // } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-        //     this._state.dialogsPage.newMessageText = action.newMessage;
-        //     this._callSubscriber(this._state)
-        //
-        // } else if (action.type === SEND_MESSAGE) {
-        //     let newMessage = this._state.dialogsPage.newMessageText;
-        //     this._state.dialogsPage.newMessageText = '';
-        //     this._state.dialogsPage.messages.push({id: 6, message: newMessage });
+
         }
     }
-export const addPostActionCreator = () => ({ type: ADD_POST });///<------ return { type: ADD_POST }
-export const updateNewPostTextActionCreator = (newText) => ({ type: UPDATE_NEW_POST_TEXT, newText: newText});
 
-export const updateNewMessageCreator = (newMessage) => ({ type: UPDATE_NEW_MESSAGE_BODY, newMessage: newMessage});
-export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
+
+
 
 export default store;
 window.state = store;
+
+// if (action.type === ADD_POST) {
+//     let newMessage = {
+//         id: 5,
+//         message: this._state.profilePage.newPostText,
+//         likesCount: 0
+//     };
+//     this._state.profilePage.posts.unshift(newMessage);
+//     this._state.profilePage.newPostText = "";
+//     this._callSubscriber(this._state);
+//
+// } else if (action.type === UPDATE_NEW_POST_TEXT) {
+//     this._state.profilePage.newPostText = action.newText;
+//     this._callSubscriber(this._state);
+//
+// } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+//     this._state.dialogsPage.newMessageText = action.newMessage;
+//     this._callSubscriber(this._state)
+//
+// } else if (action.type === SEND_MESSAGE) {
+//     let newMessage = this._state.dialogsPage.newMessageText;
+//     this._state.dialogsPage.newMessageText = '';
+//     this._state.dialogsPage.messages.push({id: 6, message: newMessage });
 
 
 // addPost() {
