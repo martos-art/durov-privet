@@ -3,11 +3,11 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
     posts: [
-        {id: 1, message: 'where is my mind?', likesCount: 764},
-        {id: 2, message: 'wheeeeere is my mind?', likesCount: 1921},
+        {id: 1, message: 'where is my mind?', likesCount: 707},
+        {id: 2, message: 'wheeeeere is my mind?', likesCount: 1994},
         {id: 4, message: 'wheeeeere is myyyyyyyyyyyyy miiiiiiiiiiiiind?', likesCount: 1337}
     ],
-    newPostText: ""
+    newPostText: "asdfafsdadsf"
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -19,13 +19,26 @@ const profileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 likesCount: 0
             };
-            state.posts.unshift(newPost);
-            state.newPostText = "";
-            return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state,
+                posts: [newPost, ...state.posts],
+                newPostText: ""
+            };
+            // let stateCopy = {...state};
+            // stateCopy.posts = [...state.posts]
+            // stateCopy.posts.unshift(newPost);
+            // stateCopy.newPostText = "";
+            // return stateCopy;
 
+        case UPDATE_NEW_POST_TEXT: {
+            // let stateCopy = {...state};
+            // stateCopy.newPostText = action.newText;
+            // return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newText
+            }
+        }
         default:
             return state;
     }
@@ -34,34 +47,3 @@ export const addPostActionCreator = () => ({type: ADD_POST});///<------ return {
 export const updateNewPostTextActionCreator = (newText) => ({type: UPDATE_NEW_POST_TEXT, newText: newText});
 
 export default profileReducer;
-
-
-//if (action.type === ADD_POST) {
-//    let newPost = {
-//      id: 5,
-//    message: state.newPostText,
-//  likesCount: 0
-// };
-//state.posts.unshift(newPost);
-//state.newPostText = "";
-//
-//} else if (action.type === UPDATE_NEW_POST_TEXT) {
-//  state.newPostText = action.newText;
-
-//}
-//return state;
-
-
-// if (action.type === ADD_POST) {
-//     let newMessage = {
-//         id: 5,
-//         message: this._state.profilePage.newPostText,
-//         likesCount: 0
-//     };
-//     this._state.profilePage.posts.unshift(newMessage);
-//     this._state.profilePage.newPostText = "";
-//     this._callSubscriber(this._state);
-//
-// } else if (action.type === UPDATE_NEW_POST_TEXT) {
-//     this._state.profilePage.newPostText = action.newText;
-//     this._callSubscriber(this._state);

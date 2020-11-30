@@ -20,35 +20,57 @@ let initialState = {
 };
 
 const dialogReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageText = action.newMessage;
-            return state;
+            return {
+                ...state,
+                newMessageText: action.newMessage
+            };
+            // let stateCopy = {...state};
+            // stateCopy.newMessageText = action.newMessage;
+            // return stateCopy;
+
         case SEND_MESSAGE:
             let newMessage = state.newMessageText;
-            state.newMessageText = '';
-            state.messages.push({id: 6, message: newMessage});
+            return {
+                ...state,
+                newMessageText: '',
+                messages: [...state.messages, {id: 6, message: newMessage}]
+            // let stateCopy = {...state};
+            // stateCopy.messages = [...state.messages];
+            //
+            // let newMessage = state.newMessageText;
+            // stateCopy.newMessageText = '';
+            // stateCopy.messages.push({id: 6, message: newMessage});
+            // return stateCopy;
+        }
+        default:
             return state;
     }
-    return state;
-}
-
-export const updateNewMessageCreator = (newMessage) => ({ type: UPDATE_NEW_MESSAGE_BODY, newMessage: newMessage});
-export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
+};
+export const updateNewMessageCreator = (newMessage) => ({type: UPDATE_NEW_MESSAGE_BODY, newMessage: newMessage});
+export const sendMessageCreator = () => ({type: SEND_MESSAGE});
 
 export default dialogReducer;
 
-// const dialogReducer = (state, action) => {
+// const dialogReducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case UPDATE_NEW_MESSAGE_BODY:
+//             let stateCopy = {...state};
+//             stateCopy.newMessageText = action.newMessage;
+//             return stateCopy;
 //
-//     if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-//         state.newMessageText = action.newMessage;
+//         case SEND_MESSAGE: {
+//             let stateCopy = {...state};
+//             stateCopy.messages = [...state.messages];
 //
-//     } else if (action.type === SEND_MESSAGE) {
-//         let newMessage = state.newMessageText;
-//         state.newMessageText = '';
-//         state.messages.push({id: 6, message: newMessage});
+//             let newMessage = state.newMessageText;
+//             stateCopy.newMessageText = '';
+//             stateCopy.messages.push({id: 6, message: newMessage});
+//             return stateCopy;
+//         }
+//         default:
+//             return state;
 //     }
-//
-//     return state;
 // }
-// export default dialogReducer;
