@@ -7,8 +7,8 @@ import Profile from './components/Profile/Profile';
 // import Music from './components/Music/Music';
 // import Settings from './components/Settings/Settings';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 import { Route } from "react-router-dom";
-
 
 function App(props) {
 
@@ -21,6 +21,9 @@ function App(props) {
                     <Route exact path='/profile' render={() => <Profile />}/>
 
                     <Route exact path='/dialogs' render={() => <DialogsContainer />}/>
+
+                    <Route exact path='/users' render={() => <UsersContainer />}/>
+
 
                     {/* <Route path='/news' component={News} />
           <Route path='/music' component={Music} />
