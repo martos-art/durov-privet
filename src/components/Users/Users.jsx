@@ -1,24 +1,28 @@
 import React from 'react';
 import style from './Users.module.css'
 import * as axios from "axios";
-import avatar from  '../../accets/images/avatar.png'
+import avatar from '../../accets/images/avatar.png'
+
 const Users = (props) => {
 
-    if (props.users.length === 0) {
 
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-            debugger;
-            props.setUsers(response.data.items)
-        });
+    let showUsers = () => {
+        if (props.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+                debugger;
+                props.setUsers(response.data.items)
+            });
+        }
     }
 
     return (
         <div>
+            <button onClick={ ()=> showUsers() }> Show Users </button>
             {
                 props.users.map((u) => <div key={u.id}>
                 <span>
                     <div>
-                        <img src={u.photos.small != null ? u.photos.small : avatar } className={style.avatar}/>
+                        <img src={u.photos.small != null ? u.photos.small : avatar} className={style.avatar}/>
                     </div>
                     <div>
                         {u.followed
