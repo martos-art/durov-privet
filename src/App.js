@@ -9,6 +9,7 @@ import Profile from './components/Profile/Profile';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import { Route } from "react-router-dom";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 function App(props) {
 
@@ -18,7 +19,7 @@ function App(props) {
                 <Navbar/>
                 <div className='app-wrapper-content'>
 
-                    <Route exact path='/profile' render={() => <Profile />}/>
+                    <Route  path='/profile' render={() => <ProfileContainer />}/>
 
                     <Route exact path='/dialogs' render={() => <DialogsContainer />}/>
 

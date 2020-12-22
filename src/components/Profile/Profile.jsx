@@ -8,14 +8,10 @@ const Profile = (props) => {
 
     return (
         <div>
-            <ProfileInfo/>
-            <MyPostsContainer />
+            <ProfileInfo profile={props.profile}/>
+            <MyPostsContainer/>
         </div>
     )
 };
 
 export default Profile;
-
-// posts={props.profilePage.posts}
-//                      newPostText={props.profilePage.newPostText}
-//                      dispatch={props.dispatch}
